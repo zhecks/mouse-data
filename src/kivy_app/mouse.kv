@@ -1,0 +1,15 @@
+#:kivy 1.0.9
+
+<Circle>:
+    size:150,150
+    canvas:
+        Ellipse:
+            pos: self.pos
+            size: self.size
+
+<MouseGame>:
+    circle: test
+
+    Circle:
+        id: test
+        center: self.parent.center
