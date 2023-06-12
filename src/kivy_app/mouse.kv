@@ -3,13 +3,35 @@
 <Circle>:
     size:150,150
     canvas:
+        Color:
+            rgb: 255, 255, 255
         Ellipse:
             pos: self.pos
             size: self.size
 
+<Rect>:
+    canvas:
+        Color:
+            rgb: 0, 0, 0
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
 <MouseGame>:
-    circle: test
+    circle: circle
+    rect: rect
+
+    Rect:
+        id: rect
+        pos: 100,100
+        size: root.width-200, root.height-200
 
     Circle:
-        id: test
+        id: circle
         center: self.parent.center
+
+    Label:
+        font_size: 100
+        size: self.texture_size
+        pos: root.width-self.width,root.height-self.height
+        text: str(root.total)
